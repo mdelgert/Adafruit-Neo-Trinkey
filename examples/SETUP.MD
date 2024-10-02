@@ -1,11 +1,3 @@
-hello1
-hello1
-hello1
-hello2
-hello2
-
-
-
 Setting up the **Adafruit Neo Trinkey** for Arduino programming involves several steps, including installing the necessary libraries and configuring the correct board in the Arduino IDE. Here’s a guide to help you get started:
 
 ### 1. Install Arduino IDE
