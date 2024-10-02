@@ -1,28 +1,19 @@
-#include <Adafruit_NeoPixel.h>
-#include "Adafruit_FreeTouch.h"
-#include "Keyboard.h"
-#include <Mouse.h>
+#include "Config.h"
+//#include "ConfigSecure.h"
 
-// Create NeoPixel and touch objects
+// Initialize NeoPixel and touch objects
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_NEOPIXEL, PIN_NEOPIXEL, NEO_GRB + NEO_KHZ800);
 Adafruit_FreeTouch qt_1 = Adafruit_FreeTouch(1, OVERSAMPLE_4, RESISTOR_50K, FREQ_MODE_NONE);
 Adafruit_FreeTouch qt_2 = Adafruit_FreeTouch(2, OVERSAMPLE_4, RESISTOR_50K, FREQ_MODE_NONE);
 
-// Constants for the setup
-const unsigned long holdThreshold = 500;     // Hold time in milliseconds
-const unsigned long blinkDelay = 500;        // Delay for LED blink
-const unsigned long timerInterval = 60000;   // Interval for mouse movement
-const char hello1[] = "hello1";              // Message for touchpad 1
-const char hello2[] = "hello2";              // Message for touchpad 2
-
-// Variables to track touch states and timers
+// Initialize variables
 bool previousTouch1State = false;
 bool previousTouch2State = false;
 unsigned long timer = 0;
 
 void setup() {
   Serial.begin(9600);
-  
+
   // Setup NeoPixel
   pixels.begin(); 
   pixels.setBrightness(20); 
@@ -31,7 +22,7 @@ void setup() {
   // Setup touch sensors
   if (!qt_1.begin()) Serial.println("Failed to initialize qt on pin 1");
   if (!qt_2.begin()) Serial.println("Failed to initialize qt on pin 2");
-    
+
   // Initialize the keyboard
   Keyboard.begin();
 }
