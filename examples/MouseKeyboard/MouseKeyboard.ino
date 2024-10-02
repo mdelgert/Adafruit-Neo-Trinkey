@@ -1,5 +1,5 @@
-#include "Config.h"
-//#include "ConfigSecure.h"
+//#include "Config.h"
+#include "ConfigSecure.h"
 
 // Initialize NeoPixel and touch objects
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_NEOPIXEL, PIN_NEOPIXEL, NEO_GRB + NEO_KHZ800);
